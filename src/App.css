@@ -1,0 +1,44 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: SF Pro Display, sans-serif;
+}
+.mainLogo {
+  cursor: pointer;
+}
+.callLogo {
+  margin-right: 20px;
+  cursor: pointer;
+}
+.homeDiv {
+  background-image: url(./images/banner.png);
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.merchantLogos {
+  margin-right: 20px;
+  max-width: 64px;
+  max-height: 64px;
+}
+.shadowLeft {
+  position: absolute;
+  width: 415.12px;
+  height: 350.11px;
+  z-index: -1;
+  left: 0;
+  background: #de352f;
+  opacity: 0.23;
+  filter: blur(94px);
+}
+.serviceLogo {
+  width: 60px;
+  height: 60px;
+}
+.bottomLogo {
+  margin-left: 16px;
+}
+strong {
+  font-weight: 700;
+}
