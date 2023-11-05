@@ -24,13 +24,14 @@ function App() {
   }, []);
 
   const { t, i18n } = useTranslation();
+
   const clickHandle = (lang) => {
     i18n.changeLanguage(lang);
   };
+
   return (
     <>
       <Navbar clickHandle={clickHandle} />
-      <Home clickHandle={clickHandle} />
       <Services services={services} clickHandle={clickHandle} />
       <Footer menuItems={menuItems} clickHandle={clickHandle} />
     </>

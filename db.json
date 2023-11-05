@@ -77,7 +77,8 @@
     {
       "id": 2,
       "title": "Əlaqə",
-      "item": ["Bizimlə əlaqə"]
+      "item": ["Bizimlə əlaqə"],
+      "image": true
     },
     {
       "id": 3,

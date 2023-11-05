@@ -8,28 +8,41 @@ export const Services = ({ services, clickHandle }) => {
 
   return (
     <Box
+      className="servicesDiv"
       sx={{
-        width: "100%",
-        paddingTop: "48px",
+        position: "flex",
+        width: { md: "auto", xs: "390px" },
+        paddingTop: { md: "48px", xs: "0px" },
         borderRadius: "16px",
       }}
     >
-      <Box className="shadowLeft"></Box>
+      <Box
+        className="shadowLeft"
+        sx={{
+          position: "absolute",
+          width: { md: " 415.12px", xs: "202px" },
+          height: { md: " 350.11px", xs: "172px" },
+          left: "0",
+          background: " #de352f",
+          opacity: { md: " 0.23", xs: "0.15" },
+          filter: "blur(94px)",
+          zIndex: { md: "-1", xs: "1" },
+        }}
+      ></Box>
       <Box
         sx={{
-          width: "100%",
-          maxWidth: "1200px",
+          maxWidth: { md: "1200px" },
           marginLeft: "auto",
           marginRight: "auto",
-          padding: "40px 48px",
+          padding: { md: "40px 48px", xs: "30px 20px 96px 20px" },
           borderRadius: "16px",
           backgroundColor: "#fff",
+          zIndex: { md: "1", xs: "-1" },
         }}
       >
         <Box>
           <Box
             sx={{
-              width: "100%",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -38,8 +51,9 @@ export const Services = ({ services, clickHandle }) => {
             <Typography
               component="h3"
               sx={{
+                display: { md: "block", xs: "none" },
                 position: "relative",
-                fontSize: "2rem",
+                fontSize: { md: "2rem", xs: "1.5rem" },
                 fontWeight: "600",
                 lineHeight: "1.2",
                 "&::before": {
@@ -55,17 +69,29 @@ export const Services = ({ services, clickHandle }) => {
             >
               {t("Xidmətlər")}
             </Typography>
+            <Typography
+              component="h3"
+              sx={{
+                display: { md: "none", xs: "flex" },
+                position: "relative",
+                fontSize: { md: "2rem", xs: "1.5rem" },
+                fontWeight: "600",
+                lineHeight: "1.2",
+              }}
+            >
+              {t("Xidmətlər")}
+            </Typography>
             <Link
               underline="none"
               sx={{
                 cursor: "pointer",
                 fontWeight: "400",
-                fontSize: "18px",
-                lineHeight: "120%",
+                fontSize: { md: "18px", xs: "14px" },
+                lineHeight: { md: "120%", xs: "0" },
                 color: "#de352f",
-                border: "1px solid #de352f",
+                border: { md: "1px solid #de352f", xs: "none" },
                 borderRadius: "16px",
-                padding: "12px 32px",
+                padding: { md: "12px 32px", xs: "16px" },
               }}
             >
               {t("Hamısına bax")}
@@ -77,8 +103,11 @@ export const Services = ({ services, clickHandle }) => {
             className="services"
             sx={{
               display: "grid",
-              gridTemplateColumns: "repeat(4,1fr)",
-              gap: "32px",
+              gridTemplateColumns: {
+                md: "repeat(4,1fr)",
+                xs: "repeat(3,1fr)",
+              },
+              gap: { md: "32px", xs: "8px" },
             }}
           >
             {services.map((service) => {

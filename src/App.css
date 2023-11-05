@@ -11,34 +11,41 @@
   margin-right: 20px;
   cursor: pointer;
 }
-.homeDiv {
+
+.section {
   background-image: url(./images/banner.png);
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .merchantLogos {
-  margin-right: 20px;
   max-width: 64px;
   max-height: 64px;
-}
-.shadowLeft {
-  position: absolute;
-  width: 415.12px;
-  height: 350.11px;
-  z-index: -1;
-  left: 0;
-  background: #de352f;
-  opacity: 0.23;
-  filter: blur(94px);
 }
 .serviceLogo {
   width: 60px;
   height: 60px;
+}
+.servicesDiv {
+  z-index: 0;
 }
 .bottomLogo {
   margin-left: 16px;
 }
 strong {
   font-weight: 700;
+}
+
+@media only screen and (max-width: 990px) {
+  .section {
+    background-image: url(./images/mobile-banner.png);
+  }
+  .merchantLogos {
+    width: 51px;
+    height: 51px;
+  }
+  .serviceLogo {
+    width: 32px;
+    height: 32px;
+  }
 }

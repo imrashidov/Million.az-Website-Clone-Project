@@ -42,6 +42,7 @@ export const Footer = ({ menuItems, clickHandle }) => {
             );
           })}
         </Box>
+
         <Box
           className="footerBottom"
           sx={{
@@ -77,7 +78,10 @@ export const Footer = ({ menuItems, clickHandle }) => {
               Developed by <strong>Crocusoft</strong>
             </Typography>
           </Box>
-          <Box className="footerBottomCenter">
+          <Box
+            className="footerBottomCenter"
+            sx={{ display: { md: "flex", xs: "none" } }}
+          >
             <IconButton>
               <img src={appstoreLogo} alt="" />
             </IconButton>
