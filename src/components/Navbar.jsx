@@ -14,6 +14,7 @@ import {
   Drawer,
   Divider,
   Stack,
+  Link,
 } from "@mui/material";
 import mainLogo from "../images/main-logo.svg";
 import callLogo from "../images/call-logo.svg";
@@ -56,6 +57,20 @@ export const Navbar = ({ clickHandle }) => {
   };
 
   const [drawer, setDrawer] = useState(false);
+
+  const sidebarItems = [
+    "Əsas səhifə",
+    "Bütün xidmətlər",
+    "Terminal xəritəsi",
+    "Xəbərlər",
+    "Şirkət haqqında",
+    "Bizə qoşul",
+  ];
+  const [sidebarItemsId, setsidebarItemsId] = useState(null);
+
+  function toggleButton(item) {
+    setsidebarItemsId(sidebarItems.id);
+  }
 
   const { t, i18n } = useTranslation();
 
@@ -255,8 +270,60 @@ export const Navbar = ({ clickHandle }) => {
                           </Button>
                         </Stack>
                       </Box>
-                      <Divider />
-                      <Box className="sidebarScroll"></Box>
+                      <Divider
+                        elevation={0}
+                        sx={{
+                          display: "block",
+                          width: "100%",
+                          height: "4px",
+                          background: "#e8e8e8",
+                          borderRadius: "16px",
+                          marginBottom: "16px",
+                          borderBottomWidth: "0",
+                        }}
+                      />
+                      <Box
+                        className="sidebarScroll"
+                        sx={{ width: "100%", overflow: "auto" }}
+                      >
+                        <Box>
+                          {sidebarItems.map((item) => {
+                            const isToggled = item.id === sidebarItemsId;
+                            return (
+                              <Box
+                                key={item}
+                                className={
+                                  isToggled
+                                    ? "sidebarItemsId toggled"
+                                    : "sidebarItemsId"
+                                }
+                                onClick={() => toggleButton(item)}
+                                sx={{
+                                  width: "100%",
+                                  display: "flex",
+                                  alignItems: "center",
+                                  marginBottom: "16px",
+                                  background: "#f5f5f5",
+                                  borderRadius: "16px",
+                                  padding: "16px",
+                                  fontWeight: "500",
+                                }}
+                              >
+                                <Link
+                                  underline="none"
+                                  sx={{
+                                    fontSize: "16px",
+                                    lineHeight: "127%",
+                                    color: "#221f20",
+                                  }}
+                                >
+                                  {t(item)}
+                                </Link>
+                              </Box>
+                            );
+                          })}
+                        </Box>
+                      </Box>
                     </Box>
                     <Box className="sidebarFooter"></Box>
                   </Box>

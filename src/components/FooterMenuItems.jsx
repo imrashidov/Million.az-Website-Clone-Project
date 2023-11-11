@@ -12,7 +12,7 @@ const info = [
   "Tez-tez verilən suallar",
 ];
 
-export const FooterMenuItems = ({ title, item, image, after, clickHandle }) => {
+export const FooterMenuItems = ({ title, item, image, clickHandle }) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -73,25 +73,3 @@ export const FooterMenuItems = ({ title, item, image, after, clickHandle }) => {
     </List>
   );
 };
-
-{
-  /* <Box>
-  {after === true ? (
-    <Box
-      sx={{
-        "&::after": {
-          content: `""`,
-          width: "25px",
-          backgroundColor: "#de352f",
-          height: "3px",
-          borderRadius: "2px",
-          position: "absolute",
-          marginTop: "-8px",
-        },
-      }}
-    ></Box>
-  ) : (
-    ""
-  )}
-</Box>; */
-}
