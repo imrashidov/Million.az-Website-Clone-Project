@@ -1,6 +1,5 @@
 import "./App.css";
 import { Navbar } from "./components/Navbar.jsx";
-import { Home } from "./components/Home.jsx";
 import { Services } from "./components/Services.jsx";
 import { Footer } from "./components/Footer.jsx";
 import { servicesData } from "./database/servicesData.jsx";

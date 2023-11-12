@@ -26,7 +26,7 @@ import azerisiq from "../images/azerisiq-logo.png";
 import azerqaz from "../images/azerqaz-logo.png";
 import azersu from "../images/azersu-logo.png";
 import narmobile from "../images/narmobile.png";
-import bakcell from "../images/bakcell.png";
+import azercell from "../images/azercellLogo.png";
 import { useTranslation } from "react-i18next";
 
 const pages = [
@@ -36,7 +36,7 @@ const pages = [
   "Bizə qoşul",
 ];
 
-const logos = [azerisiq, azerqaz, azersu, narmobile, bakcell];
+const logos = [azerqaz, azersu, azerisiq, narmobile, azercell];
 
 export const Navbar = ({ clickHandle }) => {
   const [lang, setLang] = useState("");
