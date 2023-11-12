@@ -10,11 +10,11 @@ import {
 } from "@mui/material";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import azerisiq from "../../public/images/azerisiq-logo.png";
-import azerqaz from "../../public/images/azerqaz-logo.png";
-import azersu from "../../public/images/azersu-logo.png";
-import narmobile from "../../public/images/narmobile.png";
-import bakcell from "../../public/images/bakcell.png";
+import azerisiq from "../images/azerisiq-logo.png";
+import azerqaz from "../images/azerqaz-logo.png";
+import azersu from "../images/azersu-logo.png";
+import narmobile from "../images/narmobile.png";
+import bakcell from "../images/bakcell.png";
 import { useTranslation } from "react-i18next";
 
 const logos = [azerisiq, azerqaz, azersu, narmobile, bakcell];

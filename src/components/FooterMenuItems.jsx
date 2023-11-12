@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, List, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import callFooterLogo from "../../public/images/millioncallfooter.svg";
+import callFooterLogo from "../images/millioncallfooter.svg";
 
 const info = [
   "Təhlükəsizlik",

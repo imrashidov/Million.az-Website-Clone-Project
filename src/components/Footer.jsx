@@ -1,11 +1,11 @@
 import React from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 import { FooterMenuItems } from "./FooterMenuItems.jsx";
-import visaLogo from "../../public/images/visa-logo.png";
-import mastercardLogo from "../../public/images/mastercard-logo.png";
-import appstoreLogo from "../../public/images/appstore-logo.png";
-import googleplayLogo from "../../public/images/googleplay-logo.png";
-import millioncallLogo from "../../public/images/millioncall-footer.png";
+import visaLogo from "../images/visa-logo.png";
+import mastercardLogo from "../images/mastercard-logo.png";
+import appstoreLogo from "../images/appstore-logo.png";
+import googleplayLogo from "../images/googleplay-logo.png";
+import millioncallLogo from "../images/millioncall-footer.png";
 import { useTranslation } from "react-i18next";
 
 export const Footer = ({ menuItemsData, clickHandle }) => {
