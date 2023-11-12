@@ -20,6 +20,7 @@ export const FooterMenuItems = ({ title, item, image, clickHandle }) => {
         width: "150px",
         lineHeight: "35px",
         "&::after": {
+          display: { md: "none", xs: "block" },
           content: `""`,
           width: "25px",
           backgroundColor: "#de352f",
