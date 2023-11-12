@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, IconButton, Typography, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import test from "../images/agency-service.svg";
+import { servicesData } from "../database/servicesData.jsx";
 
 export const Service = ({ title, image, clickHandle }) => {
   const { t, i18n } = useTranslation();
@@ -24,7 +24,7 @@ export const Service = ({ title, image, clickHandle }) => {
     >
       <Box sx={{ width: { md: "60px", xs: "32px" } }}>
         <Box>
-          <img className="serviceLogo" src={test} alt="" />
+          <img className="serviceLogo" src={image} alt="" />
         </Box>
       </Box>
       <Link underline="none">
