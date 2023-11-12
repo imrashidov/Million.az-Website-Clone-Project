@@ -1,11 +1,10 @@
 import React from "react";
-import communal from "../images/communal-service.svg";
 
 export const servicesData = [
   {
     id: 1,
     title: "Kommunal xidmət",
-    image: communal,
+    image: "../src/images/appstore-logo.png",
   },
   {
     id: 2,
