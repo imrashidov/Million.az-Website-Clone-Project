@@ -3,7 +3,7 @@ import { Service } from "../components/Service.jsx";
 import { Box, Typography, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-export const Services = ({ services, clickHandle }) => {
+export const Services = ({ servicesData, clickHandle }) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -110,7 +110,7 @@ export const Services = ({ services, clickHandle }) => {
               gap: { md: "32px", xs: "8px" },
             }}
           >
-            {services.map((service) => {
+            {servicesData.map((service) => {
               return (
                 <Service
                   clickHandle={clickHandle}

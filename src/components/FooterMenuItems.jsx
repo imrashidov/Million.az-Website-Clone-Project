@@ -14,7 +14,6 @@ const info = [
 
 export const FooterMenuItems = ({ title, item, image, clickHandle }) => {
   const { t, i18n } = useTranslation();
-
   return (
     <List
       sx={{

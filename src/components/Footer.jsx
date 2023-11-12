@@ -8,7 +8,7 @@ import googleplayLogo from "../images/googleplay-logo.png";
 import millioncallLogo from "../images/millioncall-footer.png";
 import { useTranslation } from "react-i18next";
 
-export const Footer = ({ menuItems, clickHandle }) => {
+export const Footer = ({ menuItemsData, clickHandle }) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -32,12 +32,12 @@ export const Footer = ({ menuItems, clickHandle }) => {
             gridColumnGap: "35px",
           }}
         >
-          {menuItems.map((menuItem) => {
+          {menuItemsData.map((menuItems) => {
             return (
               <FooterMenuItems
                 clickHandle={clickHandle}
-                key={menuItem.id}
-                {...menuItem}
+                key={menuItems.id}
+                {...menuItems}
               />
             );
           })}
