@@ -5,16 +5,20 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "nodemon --watch src --exec 'webpack-dev-server --mode development --hot --open'",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.12",
     "@mui/material": "^5.14.12",
+    "@types/html-webpack-plugin": "^3.2.9",
     "axios": "^1.6.1",
+    "html-webpack-plugin": "^5.5.3",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.2",
