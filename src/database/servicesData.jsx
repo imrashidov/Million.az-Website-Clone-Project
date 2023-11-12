@@ -4,7 +4,7 @@ export const servicesData = [
   {
     id: 1,
     title: "Kommunal xidmət",
-    image: "../src/images/communal-service.svg",
+    image: "../images/communal-service.svg",
   },
   {
     id: 2,
