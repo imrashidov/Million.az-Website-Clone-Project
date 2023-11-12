@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, IconButton, Typography, Link } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { servicesData } from "../database/servicesData.jsx";
 
 export const Service = ({ title, image, clickHandle }) => {
   const { t, i18n } = useTranslation();
