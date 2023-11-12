@@ -1,5 +1,16 @@
 import React from "react";
 import communal from "../images/communal-service.svg";
+import mobile from "../images/mobile-service.svg";
+import govern from "../images/gover-service.svg";
+import banking from "../images/bank-service.svg";
+import internet from "../images/internet-service.svg";
+import kabeltv from "../images/kabeltv-service.svg";
+import mobileServ from "../images/mobile-service.svg";
+import ewallet from "../images/ewallet-service.svg";
+import insurance from "../images/insurance-service.svg";
+import agency from "../images/agency-service.svg";
+import entertainment from "../images/fun-service.svg";
+import education from "../images/edu-service.svg";
 
 export const servicesData = [
   {
@@ -10,56 +21,56 @@ export const servicesData = [
   {
     id: 2,
     title: "Mobil operatorlar",
-    image: "../src/images/mobile-service.svg",
+    image: mobile,
   },
   {
     id: 3,
     title: "Dövlət ödənişləri",
-    image: "../src/images/gover-service.svg",
+    image: govern,
   },
   {
     id: 4,
     title: "Bank xidmətləri",
-    image: "../src/images/bank-service.svg",
+    image: banking,
   },
   {
     id: 5,
     title: "İnternet",
-    image: "../src/images/internet-service.svg",
+    image: internet,
   },
   {
     id: 6,
     title: "Kabel TV",
-    image: "../src/images/kabeltv-service.svg",
+    image: kabeltv,
   },
   {
     id: 7,
     title: "Telefon",
-    image: "../src/images/mobile-service.svg",
+    image: mobileServ,
   },
   {
     id: 8,
     title: "Elektron pul kisəsi",
-    image: "../src/images/ewallet-service.svg",
+    image: ewallet,
   },
   {
     id: 9,
     title: "Sığorta",
-    image: "../src/images/insurance-service.svg",
+    image: insurance,
   },
   {
     id: 10,
     title: "Agent şəbəkəsi",
-    image: "../src/images/agency-service.svg",
+    image: agency,
   },
   {
     id: 11,
     title: "Əyləncə",
-    image: "../src/images/fun-service.svg",
+    image: entertainment,
   },
   {
     id: 12,
     title: "Təhsil",
-    image: "../src/images/edu-service.svg",
+    image: education,
   },
 ];
