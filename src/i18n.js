@@ -33,7 +33,6 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: "az",
-    debug: true,
     lng: "az",
     resources,
     interpolation: {
