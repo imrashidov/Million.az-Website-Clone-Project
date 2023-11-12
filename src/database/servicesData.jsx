@@ -4,7 +4,7 @@ export const servicesData = [
   {
     id: 1,
     title: "Kommunal xidmət",
-    image: "../src/images/appstore-logo.png",
+    image: "./src/images/appstore-logo.png",
   },
   {
     id: 2,
