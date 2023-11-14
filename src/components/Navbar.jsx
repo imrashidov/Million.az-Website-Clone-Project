@@ -129,6 +129,9 @@ export const Navbar = ({ clickHandle }) => {
                   height: "34px",
                   borderRadius: "14px",
                   padding: "8px",
+                  "&:hover": {
+                    backgroundColor: "#de352f",
+                  },
                 }}
               >
                 <Typography
