@@ -11,7 +11,7 @@ export const Services = ({ servicesData, clickHandle }) => {
       className="servicesDiv"
       sx={{
         position: "flex",
-        width: { md: "auto", xs: "390px" },
+        width: "100%",
         paddingTop: { md: "48px", xs: "0px" },
         borderRadius: "16px",
       }}
@@ -104,8 +104,8 @@ export const Services = ({ servicesData, clickHandle }) => {
             sx={{
               display: "grid",
               gridTemplateColumns: {
-                md: "repeat(4,1fr)",
-                xs: "repeat(3,1fr)",
+                md: "1fr 1fr 1fr 1fr",
+                xs: "repeat(auto-fit,minmax(100px,1fr))",
               },
               gap: { md: "32px", xs: "8px" },
             }}

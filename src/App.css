@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: SF Pro Display, sans-serif;
 }
+
 .mainLogo {
   cursor: pointer;
 }
@@ -43,11 +44,17 @@ strong {
     background-image: url(./images/mobile-banner.png);
   }
   .merchantLogos {
-    width: 51px;
-    height: 51px;
+    width: 60px;
+    height: 60px;
   }
   .serviceLogo {
     width: 32px;
     height: 32px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .merchantLogos {
+    width: 30px;
+    height: 30px;
   }
 }

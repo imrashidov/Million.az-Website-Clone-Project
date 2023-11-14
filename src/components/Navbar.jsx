@@ -79,24 +79,21 @@ export const Navbar = ({ clickHandle }) => {
       className="section"
       sx={{
         borderRadius: { md: "0 0 32px 32px", xs: "0 0 18px 18px" },
-        width: {
-          md: "auto",
-          xs: "390px",
-        },
+        width: "100%",
       }}
     >
       <Box
         sx={{
           backgroundColor: { md: "white", xs: "none" },
-          width: { md: "auto", xs: "390px" },
+          width: { md: "100%", xs: "100%" },
         }}
       >
         <AppBar
-          position="static"
+          position="relative"
           color="inherit"
           elevation={0}
           sx={{
-            width: { md: "1168px", xs: "390px" },
+            width: { md: "100%", xs: "100%" },
             height: { md: "auto", xs: "71px" },
             display: "flex",
             justifyContent: "center",
@@ -140,7 +137,7 @@ export const Navbar = ({ clickHandle }) => {
                     textTransform: "none",
                   }}
                 >
-                  Daxil ol
+                  {t("Daxil ol")}
                 </Typography>
               </Button>
               <img className="mainLogo" src={mainLogo} alt="Main Logo" />
@@ -159,8 +156,8 @@ export const Navbar = ({ clickHandle }) => {
                   sx={{
                     display: { md: "none", xs: "flex" },
                     color: "red",
-                    width: "34px",
-                    height: "32px",
+                    width: "30px",
+                    height: "30px",
                   }}
                 />
                 <Drawer open={drawer} anchor="right">
@@ -168,7 +165,7 @@ export const Navbar = ({ clickHandle }) => {
                     <Box className="sidebarHeader" sx={{ width: "100%" }}>
                       <Box
                         sx={{
-                          width: "390px",
+                          width: "100vw",
                           display: "flex",
                           justifyContent: "center",
                           alignItems: "center",
@@ -414,18 +411,19 @@ export const Navbar = ({ clickHandle }) => {
       <Box
         className="homeDiv"
         sx={{
-          paddingTop: { md: "80px", xs: "20px" },
+          paddingTop: { md: "80px", xs: "0" },
           paddingBottom: { md: "80px", xs: "0" },
-          height: { md: "70vh", xs: "370px" },
+          padding: "0 10px 0 10px",
+          height: { md: "70vh", xs: "40vh" },
           width: "100%",
           borderRadius: "0 0 32px 32px",
         }}
       >
         <Box
           sx={{
-            width: { md: "100%", xs: "361px" },
+            width: { md: "100%", xs: "100%" },
             maxWidth: "1344px",
-            height: { md: "446px", xs: "308px" },
+            height: { md: "446px", xs: "100%" },
             marginLeft: "auto",
             marginRight: "auto",
             paddingTop: { md: "56px", xs: "0" },
@@ -458,7 +456,7 @@ export const Navbar = ({ clickHandle }) => {
             <Box
               sx={{
                 height: { md: "66px", xs: "55px" },
-                maxWidth: "480px",
+                maxWidth: { md: "480px", xs: "100%" },
                 position: "relative",
                 background: "white",
                 padding: "24px",
@@ -466,6 +464,7 @@ export const Navbar = ({ clickHandle }) => {
                 gap: "8px",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: { md: "none", xs: "center" },
                 overflow: "hidden",
               }}
             >
@@ -473,7 +472,7 @@ export const Navbar = ({ clickHandle }) => {
                 placeholder={t("Axtar")}
                 disableUnderline={true}
                 sx={{
-                  width: "390px",
+                  width: { md: "390px", xs: "100%" },
                   height: "20px",
                   fontSize: "16px",
                   fontWeight: "500",
@@ -516,20 +515,22 @@ export const Navbar = ({ clickHandle }) => {
               }}
             >
               {logos.map((logo) => (
-                <Container
+                <Box
                   disableGutters
                   underline="none"
                   key={logo}
                   sx={{
-                    width: { md: "64px", xs: "51px" },
-                    height: { md: "64px", xs: "51px" },
+                    overflow: "hidden",
+                    position: "relative",
+                    width: { md: "64px", xs: "60px" },
+                    height: { md: "64px", xs: "60px" },
                     cursor: "pointer",
                     marginRight: { md: "20px", xs: "none" },
                     m: 0,
                   }}
                 >
                   <img className="merchantLogos" src={logo} alt="" />
-                </Container>
+                </Box>
               ))}
             </Container>
           </Container>

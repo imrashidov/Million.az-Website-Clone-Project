@@ -8,8 +8,9 @@ export const Service = ({ title, image, clickHandle }) => {
   return (
     <Box
       sx={{
-        width: { md: "auto", xs: "110px" },
-        height: { md: "auto", xs: "100px" },
+        position: "relative",
+        width: "100%",
+        height: "100%",
         display: "flex",
         textAlign: "center",
         flexDirection: "column",
@@ -21,7 +22,7 @@ export const Service = ({ title, image, clickHandle }) => {
         cursor: "pointer",
       }}
     >
-      <Box sx={{ width: { md: "60px", xs: "32px" } }}>
+      <Box sx={{ width: { md: "100%", xs: "100%" } }}>
         <Box>
           <img className="serviceLogo" src={image} alt="" />
         </Box>
