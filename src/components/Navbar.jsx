@@ -36,7 +36,7 @@ const pages = [
   "Bizə qoşul",
 ];
 
-const logos = [azerqaz, azersu, azerisiq, narmobile, azercell];
+const logos = [azersu, azerqaz, azerisiq, narmobile, azercell];
 
 export const Navbar = ({ clickHandle }) => {
   const [lang, setLang] = useState("");
@@ -411,10 +411,8 @@ export const Navbar = ({ clickHandle }) => {
       <Box
         className="homeDiv"
         sx={{
-          paddingTop: { md: "80px", xs: "0" },
-          paddingBottom: { md: "80px", xs: "0" },
-          padding: "0 10px 0 10px",
-          height: { md: "70vh", xs: "40vh" },
+          padding: { md: "80px 50px 80px 50px", xs: "50px 10px" },
+          height: { md: "70vh", xs: "100%" },
           width: "100%",
           borderRadius: "0 0 32px 32px",
         }}
