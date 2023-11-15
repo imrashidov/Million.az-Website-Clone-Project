@@ -206,14 +206,15 @@ export const Navbar = ({ clickHandle }) => {
                         }}
                       >
                         <Stack direction="row" spacing={1}>
-                          <Button
+                          <Box
                             component="button"
-                            disableRipple
+                            id="az"
                             onClick={() => clickHandle("az")}
                             value=""
                             sx={{
-                              padding: "0px!important",
-                              maxWidth: "20px",
+                              border: "none",
+                              width: "40px",
+                              height: "40px",
                               fontSize: "14px",
                               fontWeight: "500",
                               borderRadius: "16px",
@@ -226,15 +227,15 @@ export const Navbar = ({ clickHandle }) => {
                             }}
                           >
                             AZ
-                          </Button>
-                          <Button
-                            component="div"
-                            disableRipple
+                          </Box>
+                          <Box
+                            component="button"
                             onClick={() => clickHandle("en")}
                             value="10"
                             sx={{
-                              padding: "10px",
-
+                              border: "none",
+                              width: "40px",
+                              height: "40px",
                               fontSize: "14px",
                               fontWeight: "500",
                               borderRadius: "16px",
@@ -247,14 +248,15 @@ export const Navbar = ({ clickHandle }) => {
                             }}
                           >
                             EN
-                          </Button>
-                          <Button
-                            component="div"
-                            disableRipple
+                          </Box>
+                          <Box
+                            component="button"
                             onClick={() => clickHandle("ru")}
                             value="20"
                             sx={{
-                              padding: "10px",
+                              border: "none",
+                              width: "40px",
+                              height: "40px",
                               fontSize: "14px",
                               fontWeight: "500",
                               borderRadius: "16px",
@@ -267,7 +269,7 @@ export const Navbar = ({ clickHandle }) => {
                             }}
                           >
                             RU
-                          </Button>
+                          </Box>
                         </Stack>
                       </Box>
                       <Divider
@@ -517,7 +519,6 @@ export const Navbar = ({ clickHandle }) => {
             >
               {logos.map((logo) => (
                 <Box
-                  disableGutters
                   underline="none"
                   key={logo}
                   sx={{
