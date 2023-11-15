@@ -12,8 +12,8 @@ dist
 dist-ssr
 *.local
 .github
-.workflows
-.deploy.yml
+workflows
+deploy.yml
 
 # Editor directories and files
 .vscode/*
