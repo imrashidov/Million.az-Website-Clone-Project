@@ -20,7 +20,7 @@
 
 ## Features
 
-**🎨 Styled with Material UI and CSS **
+**🎨 Styled with Material UI and CSS**
 
 **📱 Fully Responsive**
 
