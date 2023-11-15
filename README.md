@@ -6,6 +6,11 @@
   <img alt="Screenshot" src="./src/images/screenshot1.png" />
 </div>
 
+<h3 align="center">
+    🔹
+    <a href="https://github.com/imrashidov/Million.az-Website-Clone-Project/issues">Report Bug</a> &nbsp; &nbsp;
+</h3>
+
 ## Built With
 
 - React.js
