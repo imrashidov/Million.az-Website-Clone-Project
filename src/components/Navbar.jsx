@@ -27,6 +27,9 @@ import azerqaz from "../images/azerqaz-logo.png";
 import azersu from "../images/azersu-logo.png";
 import narmobile from "../images/narmobile.png";
 import azercell from "../images/azercellLogo.png";
+import mastercardLogo from "../images/mastercard-logo.png";
+import visaLogo from "../images/visa-logo.png";
+import millioncallLogo from "../images/millioncall-footer.png";
 import { useTranslation } from "react-i18next";
 
 const pages = [
@@ -327,7 +330,121 @@ export const Navbar = ({ clickHandle }) => {
                         </Box>
                       </Box>
                     </Box>
-                    <Box className="sidebarFooter"></Box>
+                    <Box
+                      className="sidebarFooter"
+                      sx={{
+                        width: "100%",
+                        marginTop: "auto",
+                        display: "flex",
+                        flexDirection: "column",
+                        position: "absolute",
+                        bottom: "0",
+                        left: "0",
+                        background: "#fff",
+                        padding: "16px 24px",
+                      }}
+                    >
+                      <Box className="sidebarButtons">
+                        <Box
+                          sx={{
+                            display: "flex",
+                            gap: "8px",
+                            marginBottom: "20px",
+                          }}
+                        >
+                          <Button
+                            sx={{
+                              width: "100%",
+                              padding: "16px",
+                              background: "#de352f",
+                              border: "1px solid #de352f",
+                              borderRadius: "16px",
+                              color: "#fff",
+                              textAlign: "center",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              textTransform: "capitalize",
+                              fontSize: "15px",
+                            }}
+                          >
+                            {t("Daxil ol")}
+                          </Button>
+                          <Button
+                            sx={{
+                              width: "100%",
+                              padding: "16px",
+                              background: "#000",
+                              border: "1px solid #000",
+                              borderRadius: "16px",
+                              color: "#fff",
+                              textAlign: "center",
+                              textTransform: "capitalize",
+                              fontSize: "15px",
+                            }}
+                          >
+                            {t("Tətbiqi yüklə")}
+                          </Button>
+                        </Box>
+                      </Box>
+                      <Box
+                        className="sidebarFooterCopyright"
+                        sx={{
+                          width: "100%",
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <Box
+                          className="sidebarFooterInfo"
+                          sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            flexGrow: "1",
+                          }}
+                        >
+                          <Box className="sidebarFooterLogos">
+                            <img src={visaLogo} alt="Visa" />
+                            <img
+                              src={mastercardLogo}
+                              alt="MasterCard"
+                              style={{ marginLeft: "16px" }}
+                            />
+                          </Box>
+                          <Typography
+                            sx={{
+                              fontWeight: "500",
+                              fontSize: ".625rem",
+                              color: "#221f20",
+                              opacity: ".6",
+                            }}
+                          >
+                            {t("Bütün hüquqlar qorunur")} © 2023{" "}
+                            <strong>MilliÖn</strong>
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontWeight: "500",
+                              fontSize: ".625rem",
+                              color: "#221f20",
+                              opacity: ".6",
+                            }}
+                          >
+                            Developed by <strong>Crocusoft</strong>
+                          </Typography>
+                        </Box>
+                        <Box
+                          className="sidebarFooterCall"
+                          sx={{
+                            width: "46px",
+                            height: "100%",
+                            flexShrink: "0",
+                          }}
+                        >
+                          <img src={millioncallLogo} alt="MilliOn Call" />
+                        </Box>
+                      </Box>
+                    </Box>
                   </Box>
                 </Drawer>
               </Box>
