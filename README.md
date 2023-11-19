@@ -3,7 +3,7 @@
   <a href="https://imrashidov.github.io/Million.az-Website-Clone-Project/" target="_blank">Github.io</a>
 </h2>
 <div align="center">
-  <img alt="Screenshot" src="./src/images/screenshot1.png" />
+  <img alt="Screenshot" src="./src/images/screenshot.png" />
 </div>
 
 <h3 align="center">
