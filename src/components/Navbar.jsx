@@ -492,7 +492,7 @@ export const Navbar = ({ clickHandle }) => {
                   </Button>
                 ))}
               </Container>
-              <Box sx={{ display: "flex" }}>
+              <Box sx={{ display: { md: "flex", xs: "none" } }}>
                 <FormControl
                   sx={{
                     display: { md: "flex", xs: "none" },
