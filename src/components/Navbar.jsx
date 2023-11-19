@@ -749,7 +749,7 @@ export const Navbar = ({ clickHandle }) => {
                     marginLeft: "7px",
                   }}
                 >
-                  <p>{errors.phoneNumber}</p>
+                  <p>{t(errors.phoneNumber)}</p>
                 </Box>
               )}
 
@@ -801,7 +801,7 @@ export const Navbar = ({ clickHandle }) => {
                     marginLeft: "7px",
                   }}
                 >
-                  <p>{errors.password}</p>
+                  <p>{t(errors.password)}</p>
                 </Box>
               )}
               <Box sx={{ marginTop: "25px" }}>
