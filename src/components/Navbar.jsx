@@ -17,6 +17,7 @@ import {
   Divider,
   Stack,
   Link,
+  CircularProgress,
 } from "@mui/material";
 import mainLogo from "../images/main-logo.svg";
 import callLogo from "../images/call-logo.svg";
@@ -41,6 +42,13 @@ const pages = [
   "Bizə qoşul",
 ];
 
+const onSubmit = async (values, actions) => {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 1000);
+  });
+  actions.resetForm();
+};
+
 const logos = [azersu, azerqaz, azerisiq, narmobile, azercell];
 
 export const Navbar = ({ clickHandle }) => {
@@ -48,10 +56,6 @@ export const Navbar = ({ clickHandle }) => {
   const handleChangeLang = (event) => {
     setLang(event.target.value);
   };
-  // const [value, setValue] = useState("");
-  // const handleValue = (event) => {
-  //   setValue(event.target.value);
-  // };
   const [icon, setIcon] = useState(<VisibilityOutlinedIcon />);
   const [visible, setVisible] = useState(false);
   const changeIcon = () => {
@@ -71,22 +75,21 @@ export const Navbar = ({ clickHandle }) => {
     "Şirkət haqqında",
     "Bizə qoşul",
   ];
-  const [sidebarItemsId, setsidebarItemsId] = useState(null);
+  const [sidebarItemsId, setSidebarItemsId] = useState(null);
 
   function toggleButton(item) {
-    setsidebarItemsId(sidebarItems.id);
+    setSidebarItemsId(sidebarItems.id);
   }
 
-  const onSubmit = () => {};
-
-  const { values, errors, handleSubmit, handleChange } = useFormik({
-    initialValues: {
-      phoneNumber: "",
-      password: "",
-    },
-    validationSchema: basicSchema,
-    onSubmit,
-  });
+  const { values, errors, handleChange, handleSubmit, isSubmitting } =
+    useFormik({
+      initialValues: {
+        phoneNumber: "",
+        password: "",
+      },
+      validationSchema: basicSchema,
+      onSubmit,
+    });
 
   const { t, i18n } = useTranslation();
 
@@ -248,7 +251,7 @@ export const Navbar = ({ clickHandle }) => {
                           <Box
                             component="button"
                             onClick={() => clickHandle("en")}
-                            value="10"
+                            value=""
                             sx={{
                               border: "none",
                               width: "40px",
@@ -269,7 +272,7 @@ export const Navbar = ({ clickHandle }) => {
                           <Box
                             component="button"
                             onClick={() => clickHandle("ru")}
-                            value="20"
+                            value=""
                             sx={{
                               border: "none",
                               width: "40px",
@@ -669,6 +672,8 @@ export const Navbar = ({ clickHandle }) => {
             </Container>
           </Container>
           <Container
+            onSubmit={handleSubmit}
+            component="form"
             sx={{
               display: { xs: "none", md: "block" },
               width: "410px",
@@ -801,21 +806,35 @@ export const Navbar = ({ clickHandle }) => {
               )}
               <Box sx={{ marginTop: "25px" }}>
                 <Button
-                  onSubmit={handleSubmit}
+                  disableRipple
+                  disableElevation
                   type="submit"
                   variant="contained"
                   color="error"
                   sx={{
                     textTransform: "none",
                     borderRadius: "16px",
-                    width: "120px",
+                    width: "max-content",
+                    minWidth: "110px",
                     height: "46px",
                     fontSize: "17px",
                   }}
                 >
-                  {t("Daxil ol")}
+                  {t("Daxil ol")}{" "}
+                  {isSubmitting ? (
+                    <CircularProgress
+                      color="inherit"
+                      size="40px"
+                      thickness="7"
+                      sx={{ marginLeft: "5px", padding: "10px" }}
+                    />
+                  ) : (
+                    ""
+                  )}
                 </Button>
                 <Button
+                  disableRipple
+                  disableElevation
                   variant="contained"
                   sx={{
                     textTransform: "none",
