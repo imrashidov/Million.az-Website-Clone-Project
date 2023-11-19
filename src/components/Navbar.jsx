@@ -56,6 +56,7 @@ export const Navbar = ({ clickHandle }) => {
   const handleChangeLang = (event) => {
     setLang(event.target.value);
   };
+
   const [icon, setIcon] = useState(<VisibilityOutlinedIcon />);
   const [visible, setVisible] = useState(false);
   const changeIcon = () => {
@@ -184,7 +185,10 @@ export const Navbar = ({ clickHandle }) => {
                   }}
                 />
                 <Drawer open={drawer} anchor="right">
-                  <Box className="sidebar" sx={{ width: "100%" }}>
+                  <Box
+                    className="sidebar"
+                    sx={{ width: "100%", overflow: "scroll" }}
+                  >
                     <Box className="sidebarHeader" sx={{ width: "100%" }}>
                       <Box
                         sx={{
