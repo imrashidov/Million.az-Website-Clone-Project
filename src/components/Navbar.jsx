@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import { basicSchema } from "../schema/";
 import {
@@ -52,9 +52,17 @@ const onSubmit = async (values, actions) => {
 const logos = [azersu, azerqaz, azerisiq, narmobile, azercell];
 
 export const Navbar = ({ clickHandle }) => {
+  useEffect(() => {
+    setIsActive("az");
+  }, []);
+
   const [lang, setLang] = useState("");
   const handleChangeLang = (event) => {
     setLang(event.target.value);
+  };
+  const [isActive, setIsActive] = useState("");
+  const toggleClass = (index) => {
+    setIsActive(index);
   };
 
   const [icon, setIcon] = useState(<VisibilityOutlinedIcon />);
@@ -229,11 +237,15 @@ export const Navbar = ({ clickHandle }) => {
                           marginBottom: "16px",
                         }}
                       >
-                        <Stack direction="row" spacing={1}>
+                        <Box direction="row" spacing={1}>
                           <Box
+                            className={isActive === "az" ? "active" : ""}
                             component="button"
                             id="az"
-                            onClick={() => clickHandle("az")}
+                            onClick={() => {
+                              clickHandle("az");
+                              toggleClass("az");
+                            }}
                             value=""
                             sx={{
                               border: "none",
@@ -244,17 +256,21 @@ export const Navbar = ({ clickHandle }) => {
                               borderRadius: "16px",
                               backgroundColor: "#fff",
                               color: "#000",
-                              "&:focus": {
-                                backgroundColor: "#de352f",
-                                color: "#fff",
-                              },
+                              // "&:focus": {
+                              //   backgroundColor: "#de352f",
+                              //   color: "#fff",
+                              // },
                             }}
                           >
                             AZ
                           </Box>
                           <Box
                             component="button"
-                            onClick={() => clickHandle("en")}
+                            className={isActive === "en" ? "active" : ""}
+                            onClick={() => {
+                              clickHandle("en");
+                              toggleClass("en");
+                            }}
                             value=""
                             sx={{
                               border: "none",
@@ -265,17 +281,21 @@ export const Navbar = ({ clickHandle }) => {
                               borderRadius: "16px",
                               backgroundColor: "#fff",
                               color: "#000",
-                              "&:focus": {
-                                backgroundColor: "#de352f",
-                                color: "#fff",
-                              },
+                              // "&:focus": {
+                              //   backgroundColor: "#de352f",
+                              //   color: "#fff",
+                              // },
                             }}
                           >
                             EN
                           </Box>
                           <Box
+                            className={isActive === "ru" ? "active" : ""}
                             component="button"
-                            onClick={() => clickHandle("ru")}
+                            onClick={() => {
+                              clickHandle("ru");
+                              toggleClass("ru");
+                            }}
                             value=""
                             sx={{
                               border: "none",
@@ -286,15 +306,15 @@ export const Navbar = ({ clickHandle }) => {
                               borderRadius: "16px",
                               backgroundColor: "#fff",
                               color: "#000",
-                              "&:focus": {
-                                backgroundColor: "#de352f",
-                                color: "#fff",
-                              },
+                              // "&:focus": {
+                              //   backgroundColor: "#de352f",
+                              //   color: "#fff",
+                              // },
                             }}
                           >
                             RU
                           </Box>
-                        </Stack>
+                        </Box>
                       </Box>
                       <Divider
                         elevation={0}
@@ -308,6 +328,7 @@ export const Navbar = ({ clickHandle }) => {
                           borderBottomWidth: "0",
                         }}
                       />
+
                       <Box
                         className="sidebarScroll"
                         sx={{ width: "100%", overflow: "auto" }}

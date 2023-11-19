@@ -51,6 +51,10 @@ input[type="number"] {
   border: 1px solid #de352f;
   border-radius: 16px;
 }
+button.active {
+  background-color: #de352f;
+  color: #fff;
+}
 
 @media only screen and (max-width: 990px) {
   .section {
