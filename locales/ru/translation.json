@@ -41,5 +41,9 @@
   "Xəbərlər": "Новости",
   "Bütün hüquqlar qorunur": "Все права защищены",
   "Əsas səhifə": "Домашняя страница",
-  "Tətbiqi yüklə": "Скачать приложение"
+  "Tətbiqi yüklə": "Скачать приложение",
+  "Telefon nömrəsi tələb olunur.": "Требуется номер телефона.",
+  "Telefon nömrəsi: Bu sahənin uzunluğu minimum 12 olmalıdır.": "Номер телефона: длина этого поля должна быть не менее 12.",
+  "Telefon nömrəsi və ya şifrə yararsızdır.": "Номер телефона или пароль неправильный.",
+  "Parol tələb olunur.": "Требуется пароль."
 }

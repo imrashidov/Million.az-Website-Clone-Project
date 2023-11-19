@@ -41,5 +41,9 @@
   "Xəbərlər": "News",
   "Bütün hüquqlar qorunur": "All rights reserved",
   "Əsas səhifə": "Home page",
-  "Tətbiqi yüklə": "Download the application"
+  "Tətbiqi yüklə": "Download the application",
+  "Telefon nömrəsi tələb olunur.": "Phone number required.",
+  "Telefon nömrəsi: Bu sahənin uzunluğu minimum 12 olmalıdır.": "Phone Number: This field must be at least 12 in length.",
+  "Telefon nömrəsi və ya şifrə yararsızdır.": "Phone number or password is wrong.",
+  "Parol tələb olunur.": "Password required."
 }

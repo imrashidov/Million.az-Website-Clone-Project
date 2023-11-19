@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useFormik } from "formik";
+import { basicSchema } from "../schema/";
 import {
   AppBar,
   Toolbar,
@@ -43,13 +45,13 @@ const logos = [azersu, azerqaz, azerisiq, narmobile, azercell];
 
 export const Navbar = ({ clickHandle }) => {
   const [lang, setLang] = useState("");
-  const handleChange = (event) => {
+  const handleChangeLang = (event) => {
     setLang(event.target.value);
   };
-  const [value, setValue] = useState("+994");
-  const handleValue = (event) => {
-    setValue(event.target.value);
-  };
+  // const [value, setValue] = useState("");
+  // const handleValue = (event) => {
+  //   setValue(event.target.value);
+  // };
   const [icon, setIcon] = useState(<VisibilityOutlinedIcon />);
   const [visible, setVisible] = useState(false);
   const changeIcon = () => {
@@ -75,6 +77,17 @@ export const Navbar = ({ clickHandle }) => {
     setsidebarItemsId(sidebarItems.id);
   }
 
+  const onSubmit = () => {};
+
+  const { values, errors, handleSubmit, handleChange } = useFormik({
+    initialValues: {
+      phoneNumber: "",
+      password: "",
+    },
+    validationSchema: basicSchema,
+    onSubmit,
+  });
+
   const { t, i18n } = useTranslation();
 
   return (
@@ -97,11 +110,10 @@ export const Navbar = ({ clickHandle }) => {
           elevation={0}
           sx={{
             width: { md: "100%", xs: "100%" },
-            height: { md: "auto", xs: "71px" },
+            height: { md: "auto", xs: "" },
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: { md: "16px", xs: "none" },
             marginLeft: "auto",
             marginRight: "auto",
             borderRadius: { md: "none", xs: "0 0 16px 16px" },
@@ -113,11 +125,13 @@ export const Navbar = ({ clickHandle }) => {
             z-index="20"
             sx={{
               borderRadius: "16px",
-              maxWidth: "1300px",
+              maxWidth: "1200px",
             }}
           >
             <Toolbar
               sx={{
+                padding: { md: "16px", xs: "none" },
+
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
@@ -451,9 +465,9 @@ export const Navbar = ({ clickHandle }) => {
               <Container
                 maxWidth="true"
                 sx={{
-                  maxWidth: "660px",
+                  maxWidth: "max-content",
                   marginLeft: "48px",
-                  display: { xs: "none", md: "block" },
+                  display: { xs: "none", md: "flex" },
                 }}
               >
                 {pages.map((page) => (
@@ -478,54 +492,56 @@ export const Navbar = ({ clickHandle }) => {
                   </Button>
                 ))}
               </Container>
-              <FormControl
-                sx={{
-                  display: { md: "flex", xs: "none" },
-                  borderRadius: "10px",
-                  marginRight: "40px",
-                  boxShadow: "0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.08)",
-                }}
-              >
-                <Select
-                  outlined="none"
+              <Box sx={{ display: "flex" }}>
+                <FormControl
                   sx={{
-                    display: { xs: "none", md: "flex" },
-                    height: "48px",
-                    width: "48px",
-                    fontSize: "14px",
-                    p: "1px",
-                    color: "red",
+                    display: { md: "flex", xs: "none" },
                     borderRadius: "10px",
-                    ".MuiOutlinedInput-notchedOutline ": {
-                      border: 0,
-                    },
+                    marginRight: "40px",
+                    boxShadow: "0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.08)",
                   }}
-                  inputProps={{ IconComponent: () => null }}
-                  value={lang}
-                  onChange={handleChange}
-                  displayEmpty
                 >
-                  <MenuItem onClick={() => clickHandle("az")} value="">
-                    Az
-                  </MenuItem>
-                  <MenuItem onClick={() => clickHandle("en")} value={10}>
-                    En
-                  </MenuItem>
-                  <MenuItem onClick={() => clickHandle("ru")} value={20}>
-                    Ru
-                  </MenuItem>
-                </Select>
-              </FormControl>
-              <Container
-                sx={{
-                  width: "77px",
-                  display: { md: "flex", xs: "none" },
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <img src={callLogo} alt="Call Logo" />
-              </Container>
+                  <Select
+                    outlined="none"
+                    sx={{
+                      display: { xs: "none", md: "flex" },
+                      height: "48px",
+                      width: "48px",
+                      fontSize: "14px",
+                      p: "1px",
+                      color: "red",
+                      borderRadius: "10px",
+                      ".MuiOutlinedInput-notchedOutline ": {
+                        border: "none",
+                      },
+                    }}
+                    inputProps={{ IconComponent: () => null }}
+                    value={lang}
+                    onChange={handleChangeLang}
+                    displayEmpty
+                  >
+                    <MenuItem onClick={() => clickHandle("az")} value="">
+                      Az
+                    </MenuItem>
+                    <MenuItem onClick={() => clickHandle("en")} value={10}>
+                      En
+                    </MenuItem>
+                    <MenuItem onClick={() => clickHandle("ru")} value={20}>
+                      Ru
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+                <Container
+                  sx={{
+                    width: "77px",
+                    display: { md: "flex", xs: "none" },
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <img src={callLogo} alt="Call Logo" />
+                </Container>
+              </Box>
             </Toolbar>
           </Container>
         </AppBar>
@@ -533,7 +549,7 @@ export const Navbar = ({ clickHandle }) => {
       <Box
         className="homeDiv"
         sx={{
-          padding: { md: "80px 50px 80px 50px", xs: "50px 10px" },
+          padding: { md: "80px 0 80px 0 ", xs: "50px 10px" },
           height: { md: "70vh", xs: "100%" },
           width: "100%",
           borderRadius: "0 0 32px 32px",
@@ -542,7 +558,7 @@ export const Navbar = ({ clickHandle }) => {
         <Box
           sx={{
             width: { md: "100%", xs: "100%" },
-            maxWidth: "1344px",
+            maxWidth: "1240px",
             height: { md: "446px", xs: "100%" },
             marginLeft: "auto",
             marginRight: "auto",
@@ -557,7 +573,6 @@ export const Navbar = ({ clickHandle }) => {
             <Box
               sx={{
                 marginBottom: { md: "48px", xs: "22px" },
-                height: { md: "140px" },
               }}
             >
               <Typography
@@ -657,11 +672,12 @@ export const Navbar = ({ clickHandle }) => {
             sx={{
               display: { xs: "none", md: "block" },
               width: "410px",
-              height: "334px",
+              height: "auto",
               background: "rgba(255,255,255,.14)",
               backdropFilter: "blur(24px)",
               borderRadius: "24px",
               padding: "32px",
+              flexShrink: "0",
             }}
           >
             <Typography
@@ -675,11 +691,11 @@ export const Navbar = ({ clickHandle }) => {
             >
               {t("Daxil ol")}
             </Typography>
-            <Container
-              disableGutters
+            <Box
               sx={{
                 maxWidth: "346px",
                 height: "200px",
+                display: "inline-block",
               }}
             >
               <Box
@@ -691,13 +707,47 @@ export const Navbar = ({ clickHandle }) => {
                 }}
               >
                 <Input
+                  className={errors.phoneNumber ? "input-error" : ""}
                   disableUnderline={true}
-                  type="numeric"
-                  value={value}
-                  onChange={handleValue}
-                  sx={{ width: "346px", height: "50px", padding: "16px" }}
+                  type="number"
+                  value={values.phoneNumber}
+                  id="phoneNumber"
+                  onChange={handleChange}
+                  onInput={(e) => {
+                    e.target.value = Math.max(0, parseInt(e.target.value))
+                      .toString()
+                      .slice(0, 9);
+                  }}
+                  sx={{
+                    width: "346px",
+                    height: "50px",
+                    padding: "16px",
+                    "&:before": {
+                      content: `"+994"`,
+                      paddingRight: "5px",
+                      marginBottom: "2px",
+                    },
+                  }}
                 />
               </Box>
+              {errors.phoneNumber && (
+                <Box
+                  className="error"
+                  sx={{
+                    width: "96%",
+                    color: "#d32f2f",
+                    fontSize: ".9rem",
+                    fontWeight: "400",
+                    marginTop: "-10px",
+                    marginBottom: "10px",
+                    fontFamily: "Poppins",
+                    marginLeft: "7px",
+                  }}
+                >
+                  <p>{errors.phoneNumber}</p>
+                </Box>
+              )}
+
               <Box
                 sx={{
                   background: "white",
@@ -706,12 +756,15 @@ export const Navbar = ({ clickHandle }) => {
                 }}
               >
                 <Input
+                  className={errors.password ? "input-error" : ""}
                   placeholder={t("Şifrə")}
+                  value={values.password}
+                  id="password"
+                  onChange={handleChange}
                   type={visible ? "text" : "password"}
                   disableUnderline={true}
                   sx={{ width: "346px", height: "50px", padding: "16px" }}
                 />
-
                 <IconButton
                   onClick={() => changeIcon()}
                   sx={{
@@ -721,7 +774,7 @@ export const Navbar = ({ clickHandle }) => {
                     height: "24px",
                     position: "absolute!important",
                     right: "0!important",
-                    marginRight: "30px",
+                    marginRight: "50px",
                     marginTop: "5px",
                     padding: "20px",
                   }}
@@ -729,8 +782,27 @@ export const Navbar = ({ clickHandle }) => {
                   {icon}
                 </IconButton>
               </Box>
+              {errors.password && (
+                <Box
+                  className="error"
+                  sx={{
+                    width: "96%",
+                    color: "#d32f2f",
+                    fontSize: ".9rem",
+                    fontWeight: "400",
+                    marginTop: "5px",
+                    marginBottom: "10px",
+                    fontFamily: "Poppins",
+                    marginLeft: "7px",
+                  }}
+                >
+                  <p>{errors.password}</p>
+                </Box>
+              )}
               <Box sx={{ marginTop: "25px" }}>
                 <Button
+                  onSubmit={handleSubmit}
+                  type="submit"
                   variant="contained"
                   color="error"
                   sx={{
@@ -763,7 +835,7 @@ export const Navbar = ({ clickHandle }) => {
                   {t("Qeydiyyat")}
                 </Button>
               </Box>
-            </Container>
+            </Box>
           </Container>
         </Box>
       </Box>

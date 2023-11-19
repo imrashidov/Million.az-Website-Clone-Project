@@ -39,6 +39,19 @@ strong {
 .toggled {
   font-size: 4rem;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.input-error {
+  border: 1px solid #de352f;
+  border-radius: 16px;
+}
+
 @media only screen and (max-width: 990px) {
   .section {
     background-image: url(./images/mobile-banner.png);
