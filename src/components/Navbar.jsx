@@ -374,6 +374,8 @@ export const Navbar = ({ clickHandle }) => {
                           }}
                         >
                           <Button
+                            disableRipple
+                            disableElevation
                             sx={{
                               width: "100%",
                               padding: "16px",
@@ -387,11 +389,16 @@ export const Navbar = ({ clickHandle }) => {
                               alignItems: "center",
                               textTransform: "capitalize",
                               fontSize: "15px",
+                              "&:hover": {
+                                backgroundColor: "#de352f",
+                              },
                             }}
                           >
                             {t("Daxil ol")}
                           </Button>
                           <Button
+                            disableElevation
+                            disableRipple
                             sx={{
                               width: "100%",
                               padding: "16px",
@@ -402,6 +409,9 @@ export const Navbar = ({ clickHandle }) => {
                               textAlign: "center",
                               textTransform: "capitalize",
                               fontSize: "15px",
+                              "&:hover": {
+                                backgroundColor: "#000",
+                              },
                             }}
                           >
                             {t("Tətbiqi yüklə")}
